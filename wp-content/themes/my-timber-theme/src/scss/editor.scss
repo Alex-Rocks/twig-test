@@ -1,0 +1,44 @@
+// add some custom styles
+.grecaptcha-badge {
+  display: none;
+}
+.obj-pos-65 {
+  .img-block__left img {
+    object-position: 65%;
+  }
+}
+.obj-pos-80 {
+  .img-block__left img {
+    object-position: 80%;
+  }
+}
+.double-padd{
+  padding: 10rem 0;
+  @include media(tablet) {
+    padding: 5rem 0;
+  }
+  @include media(mobile) {
+    padding: 5rem 0;
+  }
+}
+.double-padd-top{
+  padding-top: 10rem;
+  @include media(tablet) {
+    padding-top: 5rem;
+  }
+  @include media(mobile) {
+    padding-top: 5rem;
+  }
+}
+.double-padd-bottom{
+  padding-bottom: 10rem;
+  @include media(tablet) {
+    padding-bottom: 5rem;
+  }
+  @include media(mobile) {
+    padding-bottom: 5rem;
+  }
+}
+.no-padd-top{
+  padding-top: 0;
+}

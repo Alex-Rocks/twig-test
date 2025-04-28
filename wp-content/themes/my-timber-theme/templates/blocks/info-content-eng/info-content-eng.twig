@@ -1,0 +1,63 @@
+{# partials/banner.twig #}
+{% set iconId         = fields.icon %}
+{% set title      = fields.title %}
+{% set content   = fields.content %}
+{% set footer_info     = fields.footer_info %}
+
+<section class="info-content-eng">
+  <div class="container">
+    <div class="info-content-eng__header">
+      {% if iconId %}
+        <div class="image-contain">
+          {{ function('wp_get_attachment_image', iconId, 'full', false) }}
+        </div>
+      {% endif %}
+      {% if title %}
+        <h2>{{ title }}</h2>
+      {% endif %}
+    </div>
+    <div class="info-content-eng__body">
+      {% for card in content %}
+        <div class="card{% if not card.visualization_toggle %} visualization{% endif %}" data-course="{{ card.title }}">
+          <div class="info">
+            <span class="breadcrumb{% if not card.visualization_toggle %} static{% endif %}">
+              {{ card.breadcrumb }}
+            </span>
+            {% if card.image and card.visualization_toggle %}
+              <div class="image-cover">
+                {{ function('wp_get_attachment_image', card.image, 'full', false) }}
+              </div>
+            {% endif %}
+            {% if card.title and card.visualization_toggle %}
+              <h3 class="title">{{ card.title }}</h3>
+            {% endif %}
+            {% if card.text and not card.visualization_toggle %}
+              {{ card.text }}
+            {% endif %}
+            {% if card.learn_more %}
+              <a href="{{ card.learn_more.url }}"
+                 {% if card.learn_more.target %}target="{{ card.learn_more.target }}"{% endif %}>
+                {{ card.learn_more.title }}
+              </a>
+            {% endif %}
+          </div>
+          <div class="link">
+            {% if card.popup_sign_up %}
+              <a href="{{ card.popup_sign_up.url }}" class="button"
+                 {% if card.popup_sign_up.target %}target="{{ card.popup_sign_up.target }}"{% endif %}>
+                {{ card.popup_sign_up.title }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="info-content-eng__footer">
+      {% for info in footer_info %}
+        <div class="info">
+          {{ info.text }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

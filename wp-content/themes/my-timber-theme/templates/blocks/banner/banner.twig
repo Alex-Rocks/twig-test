@@ -1,0 +1,40 @@
+{# partials/banner.twig #}
+{% set title      = fields.banner_title %}
+{% set subtitle   = fields.banner_subtitle %}
+{% set bg         = fields.banner_background %}
+{% set button     = fields.banner_link %}
+
+<section class="banner">
+    {% if bg %}
+        <div class="banner__bg image-cover">
+            {{ function('wp_get_attachment_image', bg.id, 'full', false, { 'alt': bg.alt }) }}
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="content">
+            {% if title %}
+                <h1>{{ title }}</h1>
+            {% endif %}
+            {% if subtitle %}
+                <p class="big">{{ subtitle }}</p>
+            {% endif %}
+
+            {% if button %}
+                <a href="{{ button.url }}" class="button" {% if button.target %}target="{{ button.target }}"{% endif %}>
+                    {{ button.title }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+
+{# <section class="banner"> #}
+{#    <div class="container container--full"> #}
+{#        <div class="content"> #}
+{#            <h1>Опановуйте Мову легко та ефективно!</h1> #}
+{#            <p>За 2 місяці покращите рівень та отримаєте сертифікат</p> #}
+{#        </div> #}
+{#        <a href="" class="btn">Кнопка CTA</a> #}
+{#    </div> #}
+{# </section> #}

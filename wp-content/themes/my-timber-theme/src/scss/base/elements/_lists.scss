@@ -1,0 +1,34 @@
+ol,
+ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  position: relative;
+  list-style: none;
+}
+ul,
+ul.wp-block-list {
+  li {
+    color: rgba(22, 22, 22, 0.75);
+    &::before {
+      width: 0.625rem;
+      height: 0.625rem;
+      content:url("data:image/svg+xml,%3Csvg viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='7.86737' y='-0.556152' width='10' height='10' rx='2' transform='rotate(51.8816 7.86737 -0.556152)' fill='%23F2921D'/%3E%3C/svg%3E%0A");      display: block;
+      position: absolute;
+      left: 0;
+    }
+  }
+}
+ol,
+ol.wp-block-list {
+  li {
+    position: relative;
+    color: $black-text;
+    & + li {
+      margin-top: 1rem;
+    }
+    &::before {
+      position: absolute;
+      left: 0;
+    }
+  }
+}

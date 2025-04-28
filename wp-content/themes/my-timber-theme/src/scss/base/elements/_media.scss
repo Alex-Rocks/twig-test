@@ -1,0 +1,51 @@
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  height: auto; // Make sure images are scaled correctly.
+  max-width: 100%; // Adhere to container width.
+  display: block;
+}
+
+figure {
+  margin: 0; // Extra wide images within figure tags don't overflow the content area.
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+svg {
+  display: block;
+}
+
+.image-cover {
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: $tr-6;
+  }
+  &.image-top {
+    img {
+      object-position: top;
+    }
+  }
+}
+
+.image-contain {
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    transition: $tr-6;
+  }
+  &.image-top {
+    img {
+      object-position: top;
+    }
+  }
+}

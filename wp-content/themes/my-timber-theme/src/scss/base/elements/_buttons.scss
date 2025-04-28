@@ -1,0 +1,51 @@
+.wp-block-button a,
+.wp-block-read-more,
+.button,
+.wp-core-ui .button {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  background: $orange;
+  border-radius: 1rem;
+  padding: 1.25rem 3.125rem;
+  font-family: $font-family;
+  font-weight: 600;
+  font-size: 1.12rem;
+  line-height: 1;
+  text-align: center;
+  color: $white;
+  transition: $tr-6;
+  @include media(tablet) {
+    white-space: wrap;
+    font-size: 1rem;
+    padding: 0.94rem 2.12rem;
+  }
+  @include media(mobile) {
+    width: 100%;
+    white-space: wrap;
+    font-size: 1rem;
+    padding: 0.94rem 1.12rem;
+  }
+
+  &:hover {
+    background: $white;
+    transition: $tr-6;
+    color: $black-text;
+  }
+}
+
+button {
+  padding: 0;
+  background: none;
+  outline: none !important;
+  border: none;
+  cursor: pointer;
+}
+button:focus {
+  outline: 0;
+}

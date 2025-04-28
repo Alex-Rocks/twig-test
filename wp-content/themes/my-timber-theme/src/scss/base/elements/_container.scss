@@ -1,0 +1,45 @@
+.is-style-container,
+.container {
+  width: 100%;
+  max-width: 93.75rem;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+  @include media(mobile) {
+    padding: 0 1.25rem;
+  }
+}
+
+.is-style-section,
+.section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  @include media(tablet) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  @include media(mobile) {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  &:first-of-type:not(.not-first) {
+    padding-top: 5rem;
+    @include media(tablet) {
+      padding-top: 2.5rem;
+    }
+    @include media(mobile) {
+      padding-top: 2.5rem;
+    }
+  }
+}
+
+.wp-block-spacer.is-style-style-1 {
+  height: 5rem;
+  @include media(tablet) {
+    height: 2.5rem;
+  }
+  @include media(mobile) {
+    height: 2.5rem;
+  }
+}

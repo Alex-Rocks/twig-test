@@ -1,0 +1,44 @@
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 0 1.5rem;
+}
+
+address {
+  margin: 0 0 1.5rem;
+}
+
+pre {
+  font-family: $font__pre;
+  margin-bottom: 1.6rem;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6rem;
+}
+
+code,
+kbd,
+tt,
+var {
+  font-family: $font__code;
+}
+
+abbr,
+acronym {
+  border-bottom: 0.063rem dotted gray;
+  cursor: help;
+}
+
+mark,
+ins {
+  text-decoration: none;
+}
+
+big {
+  font-size: 125%;
+}

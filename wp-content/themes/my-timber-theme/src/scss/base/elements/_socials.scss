@@ -1,0 +1,33 @@
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  &__list {
+    padding-left: 2.5rem;
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    @include media(mobile){
+      padding-left: 1.25rem;
+      gap: 0.938rem;
+    }
+    a {
+      &:hover {
+        svg {
+          fill: $lime;
+        }
+        img {
+          filter: brightness(0) saturate(100%) invert(60%) sepia(84%) saturate(1300%) hue-rotate(29deg) brightness(94%) contrast(90%);
+        }
+      }
+    }
+    svg,
+    img {
+      width: 1.5rem;
+      aspect-ratio: 1;
+    }
+    svg {
+      fill: $black-text;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name":       "acf/contact-us",
+  "title":      "Contact us",
+  "category":   "layout",
+  "icon":       "cover-image",
+  "keywords":  ["contact","Contacts"],
+  "acf": {
+    "mode":           "preview",
+    "renderCallback": "timber_acf_block_render_callback"
+  }
+}

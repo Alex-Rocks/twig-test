@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name":       "acf/info-content-eng",
+  "title":      "Info Content English",
+  "category":   "layout",
+  "icon":       "cover-image",
+  "keywords":  ["info","content","english"],
+  "acf": {
+    "mode":           "preview",
+    "renderCallback": "timber_acf_block_render_callback"
+  }
+}

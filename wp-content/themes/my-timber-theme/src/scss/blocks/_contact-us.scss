@@ -1,0 +1,223 @@
+.contact-us {
+  .container {
+    display: flex;
+    gap: 1.25rem;
+    margin-block: 7.5rem;
+    @include media(tablet) {
+      flex-direction: column;
+    }
+    @include media(mobile) {
+      margin-block: 5rem;
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    max-width: 33.875rem;
+    width: 100%;
+    border-radius: 1.88rem;
+    background: $white;
+    padding: 3.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    @include media(tablet) {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
+    @include media(mobile) {
+      border-radius: 1rem;
+      max-width: 100%;
+      padding: 1.25rem;
+    }
+
+    .contact-us {
+      &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        @include media(mobile) {
+          gap: 0.625rem;
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+
+        &-item {
+          display: flex;
+          gap: 0.625rem;
+          align-items: center;
+
+          .image-contain {
+            width: 3rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            overflow: hidden;
+            background: $orange;
+            padding: 0.75rem;
+            @include media(mobile) {
+              width: 2rem;
+              padding: 0.45rem;
+            }
+
+            img {
+              width: 100%;
+
+            }
+          }
+
+          .link {
+            display: flex;
+            flex-direction: column;
+            gap: 0.313rem;
+
+            .label {
+              font-family: $font-family;
+              font-weight: 500;
+              font-size: 0.88rem;
+              color: rgba(22, 22, 22, 0.75);
+            }
+
+            a {
+              font-family: $font-family;
+              font-weight: 500;
+              font-size: 1.12rem;
+              color: $black-text;
+              @include media(tablet) {
+                font-size: 0.875rem;
+              }
+              @include media(mobile) {
+                font-size: 0.875rem;
+              }
+
+              &:hover {
+                color: $orange;
+              }
+            }
+          }
+        }
+      }
+
+      &__contacts {
+        display: flex;
+        gap: 3.125rem;
+        @include media(mobile) {
+          flex-direction: column;
+          gap: 1.25rem;
+        }
+      }
+
+      &__messengers, &__social-media {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+
+        &--wrapper {
+          display: flex;
+          gap: 0.625rem;
+        }
+
+        .image-contain {
+          width: 3.125rem;
+          aspect-ratio: 1;
+          padding: 0.75rem;
+          border-radius: 50%;
+          border: 1px solid rgba(242, 146, 29, 0.25);
+          transition: $tr-3;
+          @include media(mobile) {
+            width: 2rem;
+            padding: 0.45rem;
+          }
+
+          img {
+            transition: none;
+          }
+        }
+
+        p {
+          font-family: $font-family;
+          font-weight: 500;
+          font-size: 1.12rem;
+          color: #161616;
+          @include media(tablet) {
+            font-size: 0.875rem;
+          }
+          @include media(mobile) {
+            font-size: 0.875rem;
+          }
+        }
+
+        a {
+          &:hover {
+            .image-contain {
+              transition: $tr-3;
+              background: $orange;
+
+              img {
+                filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7488%) hue-rotate(278deg) brightness(105%) contrast(99%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    overflow: hidden;
+    max-width: 53.625rem;
+    width: 100%;
+    border-radius: 1.88rem;
+    //background: $orange;
+    padding: 3.125rem;
+    position: relative;
+    @include media(tablet) {
+      padding: 1.5rem;
+    }
+    @include media(mobile) {
+      padding: 1.25rem;
+      border-radius: 1rem;
+    }
+
+    .h3-heading {
+      color: #fff;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background-color: $orange;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 858 531' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.2' clip-path='url(%23clip0_1_1901)'%3E%3Cline x1='0.500061' y1='-54' x2='0.50003' y2='666' stroke='white'/%3E%3Cline x1='1464' y1='18.5' x2='-24' y2='18.5' stroke='white'/%3E%3Cline x1='1464' y1='42.5' x2='-24' y2='42.5' stroke='white'/%3E%3Cline x1='1464' y1='66.5' x2='-24' y2='66.5' stroke='white'/%3E%3Cline x1='1464' y1='90.5' x2='-24' y2='90.5' stroke='white'/%3E%3Cline x1='1464' y1='114.5' x2='-24' y2='114.5' stroke='white'/%3E%3Cline x1='1464' y1='138.5' x2='-24' y2='138.5' stroke='white'/%3E%3Cline x1='1464' y1='162.5' x2='-24' y2='162.5' stroke='white'/%3E%3Cline x1='1464' y1='186.5' x2='-24' y2='186.5' stroke='white'/%3E%3Cline x1='1464' y1='210.5' x2='-24' y2='210.5' stroke='white'/%3E%3Cline x1='1464' y1='234.5' x2='-24' y2='234.5' stroke='white'/%3E%3Cline x1='1464' y1='258.5' x2='-24' y2='258.5' stroke='white'/%3E%3Cline x1='1464' y1='282.5' x2='-24' y2='282.5' stroke='white'/%3E%3Cline x1='1464' y1='306.5' x2='-24' y2='306.5' stroke='white'/%3E%3Cline x1='1464' y1='330.5' x2='-24' y2='330.5' stroke='white'/%3E%3Cline x1='1464' y1='354.5' x2='-24' y2='354.5' stroke='white'/%3E%3Cline x1='1464' y1='378.5' x2='-24' y2='378.5' stroke='white'/%3E%3Cline x1='1464' y1='402.5' x2='-24' y2='402.5' stroke='white'/%3E%3Cline x1='1464' y1='426.5' x2='-24' y2='426.5' stroke='white'/%3E%3Cline x1='1464' y1='450.5' x2='-24' y2='450.5' stroke='white'/%3E%3Cline x1='1464' y1='474.5' x2='-24' y2='474.5' stroke='white'/%3E%3Cline x1='1464' y1='498.5' x2='-24' y2='498.5' stroke='white'/%3E%3Cline x1='1464' y1='522.5' x2='-24' y2='522.5' stroke='white'/%3E%3Cline x1='24.5001' y1='-54' x2='24.5' y2='666' stroke='white'/%3E%3Cline x1='24.5001' y1='-54' x2='24.5' y2='666' stroke='white'/%3E%3Cline x1='48.5001' y1='-54' x2='48.5' y2='666' stroke='white'/%3E%3Cline x1='72.5001' y1='-54' x2='72.5' y2='666' stroke='white'/%3E%3Cline x1='96.5001' y1='-54' x2='96.5' y2='666' stroke='white'/%3E%3Cline x1='120.5' y1='-54' x2='120.5' y2='666' stroke='white'/%3E%3Cline x1='144.5' y1='-54' x2='144.5' y2='666' stroke='white'/%3E%3Cline x1='168.5' y1='-54' x2='168.5' y2='666' stroke='white'/%3E%3Cline x1='192.5' y1='-54' x2='192.5' y2='666' stroke='white'/%3E%3Cline x1='216.5' y1='-54' x2='216.5' y2='666' stroke='white'/%3E%3Cline x1='240.5' y1='-54' x2='240.5' y2='666' stroke='white'/%3E%3Cline x1='264.5' y1='-54' x2='264.5' y2='666' stroke='white'/%3E%3Cline x1='288.5' y1='-54' x2='288.5' y2='666' stroke='white'/%3E%3Cline x1='312.5' y1='-54' x2='312.5' y2='666' stroke='white'/%3E%3Cline x1='336.5' y1='-54' x2='336.5' y2='666' stroke='white'/%3E%3Cline x1='360.5' y1='-54' x2='360.5' y2='666' stroke='white'/%3E%3Cline x1='384.5' y1='-54' x2='384.5' y2='666' stroke='white'/%3E%3Cline x1='408.5' y1='-54' x2='408.5' y2='666' stroke='white'/%3E%3Cline x1='432.5' y1='-54' x2='432.5' y2='666' stroke='white'/%3E%3Cline x1='456.5' y1='-54' x2='456.5' y2='666' stroke='white'/%3E%3Cline x1='480.5' y1='-54' x2='480.5' y2='666' stroke='white'/%3E%3Cline x1='504.5' y1='-54' x2='504.5' y2='666' stroke='white'/%3E%3Cline x1='528.5' y1='-54' x2='528.5' y2='666' stroke='white'/%3E%3Cline x1='552.5' y1='-54' x2='552.5' y2='666' stroke='white'/%3E%3Cline x1='576.5' y1='-54' x2='576.5' y2='666' stroke='white'/%3E%3Cline x1='600.5' y1='-54' x2='600.5' y2='666' stroke='white'/%3E%3Cline x1='624.5' y1='-54' x2='624.5' y2='666' stroke='white'/%3E%3Cline x1='648.5' y1='-54' x2='648.5' y2='666' stroke='white'/%3E%3Cline x1='672.5' y1='-54' x2='672.5' y2='666' stroke='white'/%3E%3Cline x1='696.5' y1='-54' x2='696.5' y2='666' stroke='white'/%3E%3Cline x1='720.5' y1='-54' x2='720.5' y2='666' stroke='white'/%3E%3Cline x1='744.5' y1='-54' x2='744.5' y2='666' stroke='white'/%3E%3Cline x1='768.5' y1='-54' x2='768.5' y2='666' stroke='white'/%3E%3Cline x1='792.5' y1='-54' x2='792.5' y2='666' stroke='white'/%3E%3Cline x1='816.5' y1='-54' x2='816.5' y2='666' stroke='white'/%3E%3Cline x1='840.5' y1='-54' x2='840.5' y2='666' stroke='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_1901'%3E%3Crect width='858' height='531' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      inset: 0;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(242, 146, 29, 0) 0%, #f2921d 100%);
+    }
+  }
+
+  &__feedback {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    @include media(mobile) {
+      gap: 1rem;
+    }
+  }
+}

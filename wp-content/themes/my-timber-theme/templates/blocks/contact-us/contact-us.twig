@@ -1,0 +1,90 @@
+{% set title     = fields.title %}
+{% set text     = fields.text %}
+{% set contact_info     = fields.contact_info %}
+{% set messengers_title     = fields.messengers_title %}
+{% set messengers     = fields.messengers %}
+{% set social_media_title     = fields.social_media_title %}
+{% set social_media     = fields.social_media %}
+{% set contact_form     = fields.contact_form %}
+
+<section class="contact-us" id="contact-us">
+  <div class="container">
+    <div class="contact-us__left">
+      <div class="contact-us__content">
+        <div class="contact-us__header">
+          {% if title %}
+            <p class="h3-heading">{{ title }}</p>
+          {% endif %}
+          {% if text %}
+            <p>{{ text }}</p>
+          {% endif %}
+        </div>
+        <div class="contact-us__info">
+          {% for info in contact_info %}
+            <div class="contact-us__info-item">
+              <div class="image-contain">
+                {{ function('wp_get_attachment_image', info.icon, 'full', false) }}
+              </div>
+              <div class="link">
+                {% if info.link.title %}
+                  <span class="label">{{ info.link.title }}</span>
+                {% endif %}
+                {% if info.link %}
+                  <a href="{{ info.link.url }}" {% if info.link.target %}target="{{ info.link.target }}"{% endif %}>
+                    {{ info.link.url|replace({'tel:': '', 'mailto:': ''}) }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="contact-us__contacts">
+          <div class="contact-us__messengers">
+            <p>{{ messengers_title }}</p>
+            <div class="contact-us__messengers--wrapper">
+              {% for messenger in messengers %}
+                <div class="contact-us__messengers--item">
+                  {% if messenger.url %}
+                    <a href="{{ messenger.url }}" target="_blank">
+                      <div class="image-contain">
+                        {{ function('wp_get_attachment_image', messenger.icon, 'full', false) }}
+                      </div>
+                    </a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="contact-us__social-media">
+            <p>{{ social_media_title }}</p>
+            <div class="contact-us__social-media--wrapper">
+              {% for social in social_media %}
+                <div class="contact-us__social-media--item">
+                  {% if social.url %}
+                    <a href="{{ social.url }}" target="_blank">
+                      <div class="image-contain">
+                        {{ function('wp_get_attachment_image', social.icon, 'full', false) }}
+                      </div>
+                    </a>
+                  {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-us__right">
+      <div class="contact-us__feedback">
+        {% if contact_form.title %}
+          <p class="h3-heading">{{ contact_form.title }}</p>
+        {% endif %}
+        <div class="form">
+          {{ function('do_shortcode', contact_form.shortcode_form) }}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

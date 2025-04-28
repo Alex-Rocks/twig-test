@@ -1,0 +1,10 @@
+.textoverflow {
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  // -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@import "headings";
+@import "copy";

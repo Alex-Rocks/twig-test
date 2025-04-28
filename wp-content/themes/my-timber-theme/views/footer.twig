@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="footer__top">
+    {% if  options.footer.logo %}
+
+      <a class="hdr-logo-link" href="{{ site.url }}" rel="home">
+        <div class="footer__logo image-contain">
+          {{ function('wp_get_attachment_image',  options.footer.logo, 'full') }}
+        </div>
+      </a>
+    {% endif %}
+    {% if footer_menu %}
+      <nav class="footer__menu">
+        {{ footer_menu | raw }}
+      </nav>
+    {% endif %}
+  </div>
+
+  <div class="footer__bottom">
+    <div class="footer__copyright">
+      {% if  options.footer.copyrights.privacy_policy %}
+        <a href="{{ options.footer.copyrights.privacy_policy.url }}"
+           target="{{ options.copyrights.footer.privacy_policy.target }}">{{ options.footer.copyrights.privacy_policy.title }}</a>
+      {% endif %}
+
+      {% if  options.footer.copyrights.site_rules %}
+        <a href="{{ options.footer.copyrights.site_rules.url }}"
+           target="{{ options.footer.copyrights.site_rules.target }}">{{ options.footer.copyrights.site_rules.title }}</a>
+      {% endif %}
+
+      {% if  options.footer.copyrights.site_developed %}
+        <a href="{{ options.footer.copyrights.site_developed.url }}"
+           target="{{ options.footer.copyrights.site_developed.target }}">{{ options.footer.copyrights.site_developed.title }}</a>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

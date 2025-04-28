@@ -1,0 +1,13 @@
+{# partials/contacts.twig #}
+<section class="contacts">
+    <h2>Контакти</h2>
+    <div class="contacts-content">
+        <div class="contacts-text">
+            {{ contacts.text }}
+            <a href="tel:{{ contacts.phone }}">{{ contacts.phone }}</a>
+        </div>
+        <div class="contacts-map">
+            {{ contacts.map }}
+        </div>
+    </div>
+</section>

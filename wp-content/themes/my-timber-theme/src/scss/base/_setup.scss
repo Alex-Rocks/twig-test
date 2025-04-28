@@ -1,0 +1,12 @@
+html {
+  font-size: 0.833vw; // 1920px
+  @include media(desktop) {
+    font-size: 1.111vw; // 1440px
+  }
+  @include media(tablet) {
+    font-size: 2.083vw; // 768px
+  }
+  @include media(mobile) {
+    font-size: 4.444vw; // 360px
+  }
+}

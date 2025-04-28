@@ -1,0 +1,12 @@
+{
+  "apiVersion": 2,
+  "name":       "acf/banner",
+  "title":      "Banner",
+  "category":   "layout",
+  "icon":       "cover-image",
+  "keywords":  ["banner","hero","cta"],
+  "acf": {
+    "mode":           "preview",
+    "renderCallback": "timber_acf_block_render_callback"
+  }
+}

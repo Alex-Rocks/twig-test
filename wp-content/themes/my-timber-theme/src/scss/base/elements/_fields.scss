@@ -1,0 +1,154 @@
+form {
+  .form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: flex-start;
+    @include media(mobile) {
+      gap: 0.95rem;
+    }
+  }
+
+  .input__group {
+    width: 100%;
+    display: flex;
+    gap: 1.25rem;
+    @include media(mobile) {
+      flex-direction: column;
+      gap: 0.95rem;
+    }
+
+    input, textarea {
+      border: 1px solid #f4a23f;
+      border-radius: 0.94rem;
+      padding: 1.25rem;
+      width: 100%;
+      background: #f4a23f;
+      color: $white;
+      @include media(mobile) {
+        padding:0.875rem;
+        border-radius: 0.74rem;
+      }
+      &:is(:focus-visible,:focus-within, :focus) {
+        outline: none;
+        border: 1px solid #fff;
+      }
+
+      &::placeholder {
+        color: #fff;
+      }
+
+    }
+
+    textarea {
+      width: 100%;
+      height: 9.375rem;
+      resize: none;
+    }
+
+    .wpcf7-form-control-wrap {
+      position: relative;
+
+      .wpcf7-not-valid-tip {
+        position: absolute;
+        font-size: 0.8rem;
+      }
+    }
+
+  }
+
+  .form__acceptance {
+    margin-block: 0.625rem;
+
+    .wpcf7-list-item-label, a {
+      font-family: $font-family;
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: $white;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+
+    .wpcf7-list-item {
+      margin: 0;
+    }
+
+    label {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    input[name="acceptance"] {
+      flex-shrink: 0;
+      appearance: none;
+      place-content: center;
+      width: 0.94rem;
+      height: 0.94rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      border: none;
+      border-radius: 0.19rem;
+      display: block;
+
+      &:checked::after {
+        content: '';
+        position: relative;
+        top: auto;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 0.094rem;
+        background-color: $white;
+      }
+    }
+  }
+
+  .form__row {
+    width: 100%;
+  }
+
+  .form__send {
+    margin-top: 1.25rem;
+    position: relative;
+    width: fit-content;
+    display: block;
+
+    @include media(mobile) {
+      width: 100%;
+    }
+
+    .wpcf7-spinner {
+      position: absolute;
+      left: 50%;
+      bottom: 0.875rem;
+      transform: translateX(-50%);
+      margin: 0;
+    }
+
+    input {
+      border: none;
+      color: $black-text;
+      background: $white;
+
+      &:disabled {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &.submitting {
+    input[type="submit"] {
+      color: transparent;
+      background: $white;
+    }
+  }
+
+  .wpcf7-response-output {
+    display: none;
+  }
+}

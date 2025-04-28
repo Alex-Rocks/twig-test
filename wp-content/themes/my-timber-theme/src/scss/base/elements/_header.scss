@@ -1,0 +1,191 @@
+.header {
+  transition: all ease 500ms;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  padding: 1.25rem 2.5rem 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  @include media(tablet) {
+    padding: 1rem 2.5rem 0;
+  }
+  @include media(mobile) {
+    padding: 1rem 1.25rem 0;
+  }
+
+  .container {
+    background: $white;
+    border-radius: 6.25rem;
+    padding: 1.25rem 1.563rem;
+    box-shadow: 0 0.25rem 0.875rem 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hdr-logo-link {
+    display: block;
+    max-width: 9.25rem;
+    width: 100%;
+    height: 2.5rem;
+    @include media(tablet) {
+      height: 2rem;
+    }
+    @include media(mobile) {
+      max-width: 5.55rem;
+      height: 1.5rem;
+    }
+  }
+
+  .nav-main {
+    transition: $tr-3;
+    @include media(tablet) {
+      opacity: 0;
+      display: none;
+    }
+    @include media(mobile) {
+      opacity: 0;
+      display: none;
+      transition-behavior: allow-discrete;
+    }
+
+    ul {
+      display: flex;
+      gap: 2.813rem;
+      padding: 0;
+      justify-content: flex-end;
+      @include media(desktop) {
+        gap: 1.5rem;
+      }
+      @include media(tablet) {
+        gap: 1rem;
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      li {
+        a {
+          color: $black-text;
+          font-family: $font-family;
+          font-weight: 500;
+          font-size: 1.12rem;
+          @include media(tablet) {
+            font-size: 0.875rem;
+          }
+
+          &:hover {
+            color: $orange;
+          }
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.open {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    .container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      animation: border-radius-animation 0.5s linear;
+      border-radius: 0;
+
+      .nav-main {
+        &.visible {
+          transition: $tr-3;
+          width: 100%;
+          display: block;
+          opacity: 1;
+          @starting-style {
+            opacity: 0;
+          }
+        }
+
+        ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 1.25rem;
+
+          a {
+            font-size: 2.875rem;
+            @include media(mobile) {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes border-radius-animation {
+  0% {
+    border-radius: 6.25rem;
+  }
+  100% {
+    border-radius: 0
+  }
+}
+
+/* From Uiverse.io by JulanDeAlb */
+.hamburger {
+  cursor: pointer;
+  display: none;
+  @include media(tablet) {
+    display: block;
+  }
+  @include media(mobile) {
+    display: block;
+  }
+
+  input {
+    display: none;
+
+    &:checked + svg {
+      transform: rotate(-45deg);
+
+      .line-top-bottom {
+        stroke-dasharray: 20 300;
+        stroke-dashoffset: -32.42;
+      }
+    }
+  }
+
+  svg {
+    /* The size of the SVG defines the overall size */
+    height: 3em;
+    /* Define the transition for transforming the SVG */
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include media(tablet) {
+      height: 2rem;
+    }
+    @include media(mobile) {
+      height: 2rem;
+    }
+  }
+
+  .line {
+    fill: none;
+    stroke: $black-text;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    /* Define the transition for transforming the Stroke */
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .line-top-bottom {
+    stroke-dasharray: 12 63;
+  }
+}
+

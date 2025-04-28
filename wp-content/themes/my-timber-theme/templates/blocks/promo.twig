@@ -1,0 +1,13 @@
+{# partials/promo.twig #}
+<section class="promo">
+    <h2>Акції</h2>
+    <div class="promo-grid">
+        {% for item in promotions %}
+            <div class="promo-item">
+                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>

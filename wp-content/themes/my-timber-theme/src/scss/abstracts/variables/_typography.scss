@@ -1,0 +1,32 @@
+
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src:
+    url("../src/fonts/HelveticaNeueCyr-Medium.woff2") format("woff2"),
+    url("../src/fonts/HelveticaNeueCyr-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HelveticaNeueCyr";
+  src:
+    url("../src/fonts/HelveticaNeueCyr-Roman.woff2") format("woff2"),
+    url("../src/fonts/HelveticaNeueCyr-Roman.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Gilroy";
+  src:
+    url("../src/fonts/Gilroy-Semibold.woff2") format("woff2"),
+    url("../src/fonts/Gilroy-Semibold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+$font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+$font__pre: "Courier 10 Pitch", courier, monospace;
+
+$font-family: "HelveticaNeueCyr", sans-serif;
+$second-family: "Gilroy", sans-serif;
